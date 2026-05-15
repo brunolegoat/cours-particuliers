@@ -1,22 +1,119 @@
-// Smooth reveal on scroll
-const observer = new IntersectionObserver(
+/* ── FEATURE 1 : Canvas floating lines ── */
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', resizeCanvas);
+
+const lines = Array.from({ length: 10 }, () => ({
+  x:       Math.random() * window.innerWidth,
+  y:       Math.random() * window.innerHeight,
+  angle:   Math.random() * Math.PI * 2,
+  length:  200 + Math.random() * 200,
+  speed:   0.1 + Math.random() * 0.2,
+  opacity: 0.02 + Math.random() * 0.03,
+  width:   0.5 + Math.random() * 0.5,
+}));
+
+function drawLines() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const W = canvas.width, H = canvas.height;
+
+  lines.forEach(l => {
+    l.x += Math.cos(l.angle) * l.speed;
+    l.y += Math.sin(l.angle) * l.speed;
+
+    if (l.x < -l.length)    l.x = W + l.length;
+    if (l.x > W + l.length) l.x = -l.length;
+    if (l.y < -l.length)    l.y = H + l.length;
+    if (l.y > H + l.length) l.y = -l.length;
+
+    ctx.beginPath();
+    ctx.moveTo(l.x, l.y);
+    ctx.lineTo(l.x + Math.cos(l.angle) * l.length,
+               l.y + Math.sin(l.angle) * l.length);
+    ctx.strokeStyle = `rgba(30,58,138,${l.opacity})`;
+    ctx.lineWidth   = l.width;
+    ctx.stroke();
+  });
+
+  requestAnimationFrame(drawLines);
+}
+drawLines();
+
+/* ── FEATURE 2 : Parallax grid ── */
+let rafPending = false;
+window.addEventListener('scroll', () => {
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(() => {
+    document.body.style.backgroundPositionY = `-${window.scrollY * 0.4}px`;
+    rafPending = false;
+  });
+});
+
+/* ── FEATURE 3 : Scroll reveals avec stagger ── */
+const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el    = entry.target;
+      const delay = parseInt(el.dataset.delay || '0', 10);
+      setTimeout(() => el.classList.add('revealed'), delay);
+      revealObserver.unobserve(el);
     });
   },
   { threshold: 0.1 }
 );
 
-document.querySelectorAll(
-  '.subject-card, .level-card, .step, .testi-card'
-).forEach((el) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+/* ── FEATURE 4 : SVG hero path draw ── */
+const heroPaths = document.querySelectorAll('.hero-sketch path');
+heroPaths.forEach(path => {
+  const len = path.getTotalLength();
+  path.style.strokeDasharray  = len;
+  path.style.strokeDashoffset = len;
 });
+
+const heroObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      heroPaths.forEach((path, i) => {
+        setTimeout(() => path.classList.add('drawn'), i * 400);
+      });
+      heroObserver.disconnect();
+    });
+  },
+  { threshold: 0.2 }
+);
+const heroSection = document.querySelector('.hero');
+if (heroSection) heroObserver.observe(heroSection);
+
+/* ── FEATURE 5 : Cursor trail (desktop only) ── */
+if (window.matchMedia('(pointer: fine)').matches) {
+  const dot = document.createElement('div');
+  dot.style.cssText = [
+    'position:fixed',
+    'pointer-events:none',
+    'z-index:9999',
+    'width:5px',
+    'height:5px',
+    'border-radius:50%',
+    'background:rgba(37,99,235,0.18)',
+    'transform:translate(-50%,-50%)',
+    'transition:left 0.08s linear,top 0.08s linear',
+  ].join(';');
+  document.body.appendChild(dot);
+
+  window.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top  = e.clientY + 'px';
+  });
+}

@@ -12,6 +12,9 @@
 </head>
 <body>
 
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="margin-line" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -31,23 +34,28 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">📍 Givors &amp; alentours · En ligne possible</div>
-  <h1>Des cours particuliers qui font vraiment <span>progresser</span></h1>
-  <p class="hero-sub">Maths et Physique-Chimie, du primaire au supérieur. Un suivi personnalisé, à ton rythme, pour reprendre confiance et décrocher les notes que tu mérites.</p>
-  <div class="hero-actions">
+  <svg class="hero-sketch" aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+    <path d="M 100 500 Q 400 100 700 350 T 1200 200" />
+    <path d="M 0 300 Q 300 450 600 200 T 1100 400" />
+    <path d="M 200 600 Q 500 280 820 430 T 1200 320" />
+  </svg>
+  <div class="hero-badge" data-reveal>📍 Givors &amp; alentours · En ligne possible</div>
+  <h1 data-reveal data-delay="100">Des cours particuliers qui font vraiment <span>progresser</span></h1>
+  <p class="hero-sub" data-reveal data-delay="200">Maths et Physique-Chimie, du primaire au supérieur. Un suivi personnalisé, à ton rythme, pour reprendre confiance et décrocher les notes que tu mérites.</p>
+  <div class="hero-actions" data-reveal data-delay="300">
     <a href="#contact" class="btn-primary">Prendre contact</a>
     <a href="#tarif" class="btn-ghost">Voir le tarif</a>
   </div>
   <div class="hero-stats">
-    <div class="stat">
+    <div class="stat" data-reveal data-delay="400">
       <div class="stat-number">25€</div>
       <div class="stat-label">par heure de cours</div>
     </div>
-    <div class="stat">
+    <div class="stat" data-reveal data-delay="500">
       <div class="stat-number">4</div>
       <div class="stat-label">niveaux accompagnés</div>
     </div>
-    <div class="stat">
+    <div class="stat" data-reveal data-delay="600">
       <div class="stat-number">2</div>
       <div class="stat-label">matières enseignées</div>
     </div>
@@ -57,16 +65,17 @@
 <!-- MATIÈRES -->
 <section class="subjects" id="matieres">
   <div class="section-inner">
-    <p class="section-tag">Matières</p>
-    <h2 class="section-title">Ce que j'enseigne</h2>
-    <p class="section-desc">Deux disciplines scientifiques fondamentales, enseignées avec clarté et rigueur.</p>
+    <span class="annotation" aria-hidden="true">§01 — maths</span>
+    <p class="section-tag" data-reveal>Matières</p>
+    <h2 class="section-title" data-reveal data-delay="100">Ce que j'enseigne</h2>
+    <p class="section-desc" data-reveal data-delay="150">Deux disciplines scientifiques fondamentales, enseignées avec clarté et rigueur.</p>
     <div class="subjects-grid">
-      <div class="subject-card">
+      <div class="subject-card" data-reveal data-delay="0">
         <div class="subject-icon">📐</div>
         <h3>Mathématiques</h3>
         <p>Algèbre, géométrie, fonctions, probabilités, analyse… Je travaille les bases comme les notions avancées, avec des exercices progressifs adaptés à chaque élève.</p>
       </div>
-      <div class="subject-card">
+      <div class="subject-card" data-reveal data-delay="120">
         <div class="subject-icon">⚗️</div>
         <h3>Physique-Chimie</h3>
         <p>Mécanique, électricité, thermodynamique, chimie organique et inorganique… On reprend les concepts depuis le début pour construire une compréhension solide.</p>
@@ -78,32 +87,33 @@
 <!-- NIVEAUX -->
 <section class="levels" id="niveaux">
   <div class="section-inner">
-    <p class="section-tag">Niveaux</p>
-    <h2 class="section-title">Pour tous les profils</h2>
-    <p class="section-desc">Du primaire aux études supérieures, chaque élève bénéficie d'un suivi sur-mesure.</p>
+    <span class="annotation" aria-hidden="true">§02 — niveaux</span>
+    <p class="section-tag" data-reveal>Niveaux</p>
+    <h2 class="section-title" data-reveal data-delay="100">Pour tous les profils</h2>
+    <p class="section-desc" data-reveal data-delay="150">Du primaire aux études supérieures, chaque élève bénéficie d'un suivi sur-mesure.</p>
     <div class="levels-grid">
-      <div class="level-card">
+      <div class="level-card" data-reveal data-delay="0">
         <div class="level-dot"></div>
         <div>
           <h4>Primaire</h4>
           <p>CM1, CM2 — bases solides en calcul et logique.</p>
         </div>
       </div>
-      <div class="level-card">
+      <div class="level-card" data-reveal data-delay="100">
         <div class="level-dot"></div>
         <div>
           <h4>Collège</h4>
           <p>6e → 3e — consolider les acquis, préparer le brevet.</p>
         </div>
       </div>
-      <div class="level-card">
+      <div class="level-card" data-reveal data-delay="200">
         <div class="level-dot"></div>
         <div>
           <h4>Lycée</h4>
           <p>Seconde, Première, Terminale — viser le bac et les prépas.</p>
         </div>
       </div>
-      <div class="level-card">
+      <div class="level-card" data-reveal data-delay="300">
         <div class="level-dot"></div>
         <div>
           <h4>Supérieur &amp; adultes</h4>
@@ -117,26 +127,27 @@
 <!-- MÉTHODE -->
 <section class="method" id="methode">
   <div class="section-inner">
-    <p class="section-tag">Méthode</p>
-    <h2 class="section-title">Comment ça se passe ?</h2>
-    <p class="section-desc">Un fonctionnement simple, centré sur toi et tes objectifs.</p>
+    <span class="annotation" aria-hidden="true">§03 — méthode</span>
+    <p class="section-tag" data-reveal>Méthode</p>
+    <h2 class="section-title" data-reveal data-delay="100">Comment ça se passe ?</h2>
+    <p class="section-desc" data-reveal data-delay="150">Un fonctionnement simple, centré sur toi et tes objectifs.</p>
     <div class="method-steps">
-      <div class="step">
+      <div class="step" data-reveal data-delay="0">
         <div class="step-num">01</div>
         <h4>Premier contact gratuit</h4>
         <p>On échange par email pour cerner ton niveau, tes difficultés et tes objectifs. Zéro engagement.</p>
       </div>
-      <div class="step">
+      <div class="step" data-reveal data-delay="100">
         <div class="step-num">02</div>
         <h4>Cours d'évaluation</h4>
         <p>Le premier cours permet de faire le point précisément et de construire un plan de travail personnalisé.</p>
       </div>
-      <div class="step">
+      <div class="step" data-reveal data-delay="200">
         <div class="step-num">03</div>
         <h4>Suivi régulier</h4>
         <p>Des séances hebdomadaires à fréquence adaptable, avec des exercices entre les cours pour ancrer les progrès.</p>
       </div>
-      <div class="step">
+      <div class="step" data-reveal data-delay="300">
         <div class="step-num">04</div>
         <h4>Résultats visibles</h4>
         <p>Confiance retrouvée, notes en hausse et méthodes de travail acquises pour être autonome.</p>
@@ -148,10 +159,11 @@
 <!-- TARIF -->
 <section class="pricing" id="tarif">
   <div class="section-inner">
-    <p class="section-tag" style="text-align:center">Tarif</p>
-    <h2 class="section-title" style="text-align:center">Simple et transparent</h2>
-    <p class="section-desc" style="margin:0 auto 48px;text-align:center">Un seul tarif, sans frais cachés ni engagement minimum.</p>
-    <div class="pricing-card">
+    <span class="annotation" aria-hidden="true">§04 — tarif</span>
+    <p class="section-tag" style="text-align:center" data-reveal>Tarif</p>
+    <h2 class="section-title" style="text-align:center" data-reveal data-delay="100">Simple et transparent</h2>
+    <p class="section-desc" style="margin:0 auto 48px;text-align:center" data-reveal data-delay="150">Un seul tarif, sans frais cachés ni engagement minimum.</p>
+    <div class="pricing-card" data-reveal data-delay="200">
       <div class="price-amount">25€</div>
       <div class="price-unit">par heure de cours</div>
       <ul class="price-features">
@@ -170,11 +182,12 @@
 <!-- TÉMOIGNAGES -->
 <section class="testimonials" id="temoignages">
   <div class="section-inner">
-    <p class="section-tag">Témoignages</p>
-    <h2 class="section-title">Ce qu'ils en disent</h2>
-    <p class="section-desc">Des élèves et parents qui ont fait confiance à Bruno.</p>
+    <span class="annotation" aria-hidden="true">§05 — avis</span>
+    <p class="section-tag" data-reveal>Témoignages</p>
+    <h2 class="section-title" data-reveal data-delay="100">Ce qu'ils en disent</h2>
+    <p class="section-desc" data-reveal data-delay="150">Des élèves et parents qui ont fait confiance à Bruno.</p>
     <div class="testi-grid">
-      <div class="testi-card">
+      <div class="testi-card" data-reveal data-delay="0">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">« Mon fils était en grande difficulté en maths en 3e. En deux mois avec Bruno, il a non seulement rattrapé son retard, mais il s'est remis à aimer la matière. Il a eu 14 au brevet ! »</p>
         <div class="testi-author">
@@ -185,7 +198,7 @@
           </div>
         </div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card" data-reveal data-delay="120">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">« J'ai repris des études en BTS après plusieurs années. Bruno a su s'adapter à mon rythme d'adulte et m'expliquer la physique avec une clarté que je n'avais jamais eue à l'école. »</p>
         <div class="testi-author">
@@ -196,7 +209,7 @@
           </div>
         </div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card" data-reveal data-delay="240">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">« Ma fille avait une vraie phobie des maths en seconde. Bruno a été patient, bienveillant et très efficace. Elle a terminé l'année avec mention au bac. Merci infiniment ! »</p>
         <div class="testi-author">
@@ -214,13 +227,14 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-inner">
-    <p class="section-tag" style="color:rgba(255,255,255,0.6)">Contact</p>
-    <h2 class="section-title">Prêt à progresser ?</h2>
-    <p class="section-desc">Envoie-moi un email pour qu'on discute de tes besoins. Je réponds sous 24h.</p>
-    <a href="mailto:brunoricci066@gmail.com" class="contact-email">
+    <span class="annotation" aria-hidden="true">§06 — contact</span>
+    <p class="section-tag" data-reveal>Contact</p>
+    <h2 class="section-title" data-reveal data-delay="100">Prêt à progresser ?</h2>
+    <p class="section-desc" data-reveal data-delay="150">Envoie-moi un email pour qu'on discute de tes besoins. Je réponds sous 24h.</p>
+    <a href="mailto:brunoricci066@gmail.com" class="contact-email" data-reveal data-delay="250">
       ✉️ brunoricci066@gmail.com
     </a>
-    <p class="contact-detail">📍 Givors et ses alentours &nbsp;·&nbsp; Cours en ligne disponibles</p>
+    <p class="contact-detail" data-reveal data-delay="350">📍 Givors et ses alentours &nbsp;·&nbsp; Cours en ligne disponibles</p>
   </div>
 </section>
 
