@@ -140,22 +140,6 @@ modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.querySelector('.modal-close').addEventListener('click', closeModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* Pill toggles */
-function setupPills(containerId, hiddenId) {
-  const container = document.getElementById(containerId);
-  const hidden    = document.getElementById(hiddenId);
-  container.querySelectorAll('.slot-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      pill.classList.toggle('active');
-      const selected = [...container.querySelectorAll('.slot-pill.active')]
-        .map(p => p.dataset.value).join(', ');
-      hidden.value = selected;
-    });
-  });
-}
-setupPills('days-pills',  'f-jours');
-setupPills('hours-pills', 'f-creneaux');
-
 /* Form submission via fetch → Formspree */
 bookingForm.addEventListener('submit', async e => {
   e.preventDefault();
