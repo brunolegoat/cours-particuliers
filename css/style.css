@@ -370,12 +370,10 @@ section {
   font-style: italic;
 }
 
-/* Shine animation */
+/* Shine animation — corner glow */
 @keyframes bulletin-shine {
-  0%   { left: -80%; opacity: 0; }
-  8%   { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { left: 130%; opacity: 0; }
+  0%, 100% { opacity: 0; transform: scale(0.7); }
+  50%       { opacity: 1; transform: scale(1.3); }
 }
 
 /* Document shell */
@@ -390,11 +388,12 @@ section {
 .bulletin-doc::after {
   content: '';
   position: absolute;
-  top: 0; left: -80%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(147,197,253,0.28), transparent);
-  animation: bulletin-shine 5s ease-in-out infinite;
+  top: -18px; right: -18px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147,197,253,0.7) 0%, transparent 70%);
+  animation: bulletin-shine 4s ease-in-out infinite;
   pointer-events: none;
 }
 .bulletin-doc--after {
@@ -402,7 +401,7 @@ section {
   box-shadow: 0 0 20px rgba(37,99,235,0.28), 0 2px 8px rgba(0,0,0,0.05);
 }
 .bulletin-doc--after::after {
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 
 /* Table */
@@ -436,7 +435,7 @@ section {
 
 /* Appreciation box */
 .bulletin-appr { border-top: 1px solid rgba(37,99,235,0.28); padding: 6px 8px; }
-.bulletin-appr--after { border-left: 3px solid var(--accent); }
+.bulletin-appr--after { border-left: none; }
 .bulletin-appr-hd {
   text-align: center;
   font-size: 0.68rem;
