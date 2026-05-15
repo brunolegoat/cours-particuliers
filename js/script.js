@@ -140,6 +140,22 @@ modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.querySelector('.modal-close').addEventListener('click', closeModal);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+function showDurationChoice() {
+  formWrap.style.display = 'none';
+  document.querySelector('.modal-box').classList.add('modal-box--wide');
+  formSuccess.classList.add('visible');
+  document.querySelectorAll('.duration-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById('duration-choice').style.display = 'none';
+      const container = document.getElementById('calendly-container');
+      container.classList.add('active');
+      Calendly.initInlineWidget({ url: card.dataset.url, parentElement: container });
+    });
+  });
+}
+
+document.getElementById('skip-form').addEventListener('click', showDurationChoice);
+
 /* Form submission via fetch → Formspree */
 bookingForm.addEventListener('submit', async e => {
   e.preventDefault();
@@ -154,18 +170,7 @@ bookingForm.addEventListener('submit', async e => {
       headers: { 'Accept': 'application/json' },
     });
     if (res.ok) {
-      formWrap.style.display = 'none';
-      document.querySelector('.modal-box').classList.add('modal-box--wide');
-      formSuccess.classList.add('visible');
-
-      document.querySelectorAll('.duration-card').forEach(card => {
-        card.addEventListener('click', () => {
-          document.getElementById('duration-choice').style.display = 'none';
-          const container = document.getElementById('calendly-container');
-          container.classList.add('active');
-          Calendly.initInlineWidget({ url: card.dataset.url, parentElement: container });
-        });
-      });
+      showDurationChoice();
     } else {
       btn.textContent = 'Erreur — réessayer';
       btn.disabled = false;
