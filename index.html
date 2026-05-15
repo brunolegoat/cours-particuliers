@@ -15,6 +15,116 @@
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 <div class="margin-line" aria-hidden="true"></div>
 
+<!-- DÉCORATIONS CAHIER : taches d'encre + peluches de gomme -->
+<svg id="notebook-deco" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="none">
+  <defs>
+    <filter id="f-ink" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3 3"/>
+    </filter>
+    <filter id="f-ink-sm" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.8 1.8"/>
+    </filter>
+  </defs>
+
+  <!-- ══ CÔTÉ GAUCHE ══ -->
+
+  <!-- Tache 1 : blob moyen, haut gauche -->
+  <g filter="url(#f-ink)" opacity="0.18">
+    <path transform="translate(36,148)" d="M0,0 C3,-14 24,-17 27,-6 C30,5 23,21 9,19 C-5,17 -3,14 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(60,138)" cx="0" cy="0" rx="5" ry="3.2" fill="#1E3A8A" opacity="0.55"/>
+  </g>
+
+  <!-- Tache 2 : petite goutte, côté gauche milieu-haut -->
+  <g filter="url(#f-ink-sm)" opacity="0.14">
+    <path transform="translate(52,358)" d="M0,0 C1,-9 14,-11 16,-3 C18,5 12,14 4,12 C-4,10 -1,9 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(60,368)" cx="0" cy="0" rx="3" ry="1.8" fill="#1E3A8A" opacity="0.45"/>
+  </g>
+
+  <!-- Tache 3 : blob irrégulier, milieu-bas gauche -->
+  <g filter="url(#f-ink)" opacity="0.13">
+    <path transform="translate(22,598)" d="M0,0 C4,-13 26,-16 29,-5 C32,6 25,22 11,20 C-3,18 -4,16 0,0" fill="#1E3A8A"/>
+  </g>
+
+  <!-- Tache 4 : micro goutte bas gauche -->
+  <g filter="url(#f-ink-sm)" opacity="0.11">
+    <path transform="translate(48,808)" d="M0,0 C1,-7 12,-8 13,-2 C14,4 9,10 3,8 C-3,6 -1,7 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(55,816)" cx="0" cy="0" rx="2.5" ry="1.5" fill="#1E3A8A" opacity="0.4"/>
+  </g>
+
+  <!-- Peluches de gomme 1 (gauche, y≈252) -->
+  <g fill="#C2BAB0" opacity="0.62">
+    <rect x="84"  y="250" width="17" height="2.6" rx="1.3" transform="rotate(-18,92.5,251.3)"/>
+    <rect x="94"  y="258" width="13" height="2.2" rx="1.1" transform="rotate(9,100.5,259.1)"/>
+    <rect x="76"  y="265" width="20" height="2.6" rx="1.3" transform="rotate(-34,86,266.3)"/>
+    <rect x="100" y="254" width="11" height="2"   rx="1"   transform="rotate(46,105.5,255)"/>
+    <rect x="72"  y="260" width="15" height="2.2" rx="1.1" transform="rotate(-6,79.5,261.1)"/>
+    <rect x="90"  y="271" width="9"  height="2"   rx="1"   transform="rotate(23,94.5,272)"/>
+    <ellipse cx="113" cy="261" rx="2.2" ry="1.4" transform="rotate(32,113,261)"/>
+    <ellipse cx="71"  cy="268" rx="1.6" ry="1"   transform="rotate(-12,71,268)"/>
+    <ellipse cx="88"  cy="276" rx="1.4" ry="0.9" transform="rotate(8,88,276)"/>
+  </g>
+
+  <!-- Peluches de gomme 2 (gauche, y≈512) -->
+  <g fill="#C2BAB0" opacity="0.55">
+    <rect x="83"  y="510" width="18" height="2.6" rx="1.3" transform="rotate(22,92,511.3)"/>
+    <rect x="70"  y="518" width="22" height="2.2" rx="1.1" transform="rotate(-9,81,519.1)"/>
+    <rect x="95"  y="514" width="12" height="2.4" rx="1.2" transform="rotate(40,101,515.2)"/>
+    <rect x="77"  y="524" width="17" height="2.6" rx="1.3" transform="rotate(-28,85.5,525.3)"/>
+    <rect x="91"  y="529" width="10" height="2"   rx="1"   transform="rotate(14,96,530)"/>
+    <ellipse cx="69"  cy="520" rx="2"   ry="1.3" transform="rotate(18,69,520)"/>
+    <ellipse cx="107" cy="516" rx="1.8" ry="1.1" transform="rotate(-25,107,516)"/>
+  </g>
+
+  <!-- ══ CÔTÉ DROIT ══ -->
+
+  <!-- Tache 5 : blob moyen, haut droit -->
+  <g filter="url(#f-ink)" opacity="0.16">
+    <path transform="translate(1398,182)" d="M0,0 C-4,-14 -26,-16 -29,-5 C-32,6 -25,21 -11,19 C3,17 4,15 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(1370,172)" cx="0" cy="0" rx="4.5" ry="2.8" fill="#1E3A8A" opacity="0.5"/>
+  </g>
+
+  <!-- Tache 6 : petite goutte avec satellite, droit milieu -->
+  <g filter="url(#f-ink-sm)" opacity="0.14">
+    <path transform="translate(1412,435)" d="M0,0 C-2,-10 -17,-12 -19,-4 C-21,4 -15,15 -6,13 C3,11 2,10 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(1392,444)" cx="0" cy="0" rx="4" ry="2.2" fill="#1E3A8A" opacity="0.4"/>
+  </g>
+
+  <!-- Tache 7 : micro splash bas droit -->
+  <g filter="url(#f-ink-sm)" opacity="0.12">
+    <path transform="translate(1420,692)" d="M0,0 C-1,-8 -13,-9 -14,-2 C-15,5 -9,11 -3,9 C3,7 1,8 0,0" fill="#1E3A8A"/>
+  </g>
+
+  <!-- Tache 8 : toute petite, très bas droit -->
+  <g filter="url(#f-ink-sm)" opacity="0.10">
+    <path transform="translate(1404,842)" d="M0,0 C-2,-11 -20,-13 -22,-4 C-24,5 -18,17 -7,15 C4,13 2,11 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(1380,849)" cx="0" cy="0" rx="3" ry="1.8" fill="#1E3A8A" opacity="0.38"/>
+  </g>
+
+  <!-- Peluches de gomme 3 (droit, y≈308) -->
+  <g fill="#C2BAB0" opacity="0.58">
+    <rect x="1316" y="306" width="18" height="2.6" rx="1.3" transform="rotate(20,1325,307.3)"/>
+    <rect x="1328" y="314" width="14" height="2.2" rx="1.1" transform="rotate(-13,1335,315.1)"/>
+    <rect x="1310" y="319" width="21" height="2.6" rx="1.3" transform="rotate(37,1320.5,320.3)"/>
+    <rect x="1330" y="301" width="12" height="2"   rx="1"   transform="rotate(-42,1336,302)"/>
+    <rect x="1320" y="325" width="16" height="2.2" rx="1.1" transform="rotate(6,1328,326.1)"/>
+    <rect x="1335" y="319" width="8"  height="2"   rx="1"   transform="rotate(-20,1339,320)"/>
+    <ellipse cx="1332" cy="309" rx="2.2" ry="1.4" transform="rotate(-28,1332,309)"/>
+    <ellipse cx="1313" cy="316" rx="1.5" ry="1"   transform="rotate(35,1313,316)"/>
+  </g>
+
+  <!-- Peluches de gomme 4 (droit, y≈706) -->
+  <g fill="#C2BAB0" opacity="0.52">
+    <rect x="1318" y="704" width="16" height="2.6" rx="1.3" transform="rotate(-24,1326,705.3)"/>
+    <rect x="1308" y="712" width="22" height="2.2" rx="1.1" transform="rotate(11,1319,713.1)"/>
+    <rect x="1326" y="708" width="13" height="2.4" rx="1.2" transform="rotate(-38,1332.5,709.2)"/>
+    <rect x="1314" y="720" width="18" height="2.6" rx="1.3" transform="rotate(30,1323,721.3)"/>
+    <rect x="1323" y="725" width="11" height="2"   rx="1"   transform="rotate(-9,1328.5,726)"/>
+    <ellipse cx="1306" cy="714" rx="2"   ry="1.3" transform="rotate(22,1306,714)"/>
+    <ellipse cx="1340" cy="710" rx="1.6" ry="1"   transform="rotate(-30,1340,710)"/>
+  </g>
+
+</svg>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
