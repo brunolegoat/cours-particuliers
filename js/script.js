@@ -171,6 +171,7 @@ bookingForm.addEventListener('submit', async e => {
     });
     if (res.ok) {
       formWrap.style.display = 'none';
+      document.querySelector('.modal-box').classList.add('modal-box--wide');
       formSuccess.classList.add('visible');
     } else {
       btn.textContent = 'Erreur — réessayer';
