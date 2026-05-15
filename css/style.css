@@ -847,10 +847,24 @@ footer {
 
 /* Calendly container */
 #calendly-container { min-height: 0; }
-#calendly-container.active { min-height: 580px; }
+#calendly-container.active {
+  height: 700px;
+  min-height: 700px;
+}
+#calendly-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+}
 
 /* Modal wide (Calendly) */
-.modal-box--wide { max-width: 720px; }
+.modal-box--wide {
+  max-width: 760px;
+  max-height: 96vh;
+  padding: 24px 24px 16px;
+}
+.modal-box--wide .form-success-icon { font-size: 1.4rem; margin-bottom: 2px; }
+.modal-box--wide .form-success-msg  { margin-bottom: 10px; font-size: 0.85rem; }
 
 @media (max-width: 400px) {
   .duration-choice { flex-direction: column; align-items: center; }
