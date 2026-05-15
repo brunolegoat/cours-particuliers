@@ -332,7 +332,8 @@ section {
 }
 
 /* ── QUI SUIS-JE ── */
-.about { padding-top: 48px; }
+.hero { padding-bottom: 44px; }
+.about { padding-top: 44px; }
 
 .about-bio {
   font-size: 1.05rem;
