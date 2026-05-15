@@ -463,6 +463,8 @@ section {
 }
 .subject-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
 .subject-card p  { color: var(--graphite); font-size: 0.95rem; line-height: 1.65; }
+.subject-card--method { border-style: dashed; border-color: rgba(37,99,235,0.25); background: rgba(37,99,235,0.03); }
+.subject-card--method h3 { color: var(--accent); }
 
 /* ── NIVEAUX ── */
 .levels-grid {
