@@ -117,3 +117,67 @@ if (window.matchMedia('(pointer: fine)').matches) {
     dot.style.top  = e.clientY + 'px';
   });
 }
+
+/* ── FEATURE 6 : Booking modal ── */
+const modal       = document.getElementById('booking-modal');
+const bookingForm = document.getElementById('booking-form');
+const formSuccess = document.getElementById('form-success');
+const formWrap    = document.getElementById('modal-form-wrap');
+
+function openModal() {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-booking]').forEach(btn =>
+  btn.addEventListener('click', e => { e.preventDefault(); openModal(); })
+);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.querySelector('.modal-close').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* Pill toggles */
+function setupPills(containerId, hiddenId) {
+  const container = document.getElementById(containerId);
+  const hidden    = document.getElementById(hiddenId);
+  container.querySelectorAll('.slot-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('active');
+      const selected = [...container.querySelectorAll('.slot-pill.active')]
+        .map(p => p.dataset.value).join(', ');
+      hidden.value = selected;
+    });
+  });
+}
+setupPills('days-pills',  'f-jours');
+setupPills('hours-pills', 'f-creneaux');
+
+/* Form submission via fetch → Formspree */
+bookingForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = bookingForm.querySelector('.form-submit');
+  btn.textContent = 'Envoi en cours…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(bookingForm.action, {
+      method: 'POST',
+      body: new FormData(bookingForm),
+      headers: { 'Accept': 'application/json' },
+    });
+    if (res.ok) {
+      formWrap.style.display = 'none';
+      formSuccess.classList.add('visible');
+    } else {
+      btn.textContent = 'Erreur — réessayer';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Erreur — réessayer';
+    btn.disabled = false;
+  }
+});

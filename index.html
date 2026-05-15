@@ -106,7 +106,7 @@
   <h1>Des cours particuliers qui font vraiment <span>progresser</span></h1>
   <p class="hero-sub">Maths, Physique-Chimie et Sciences de l'Ingénieur, du primaire au supérieur. Un suivi personnalisé, à ton rythme, pour reprendre confiance et <span>apprendre à apprendre</span>.</p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Prendre contact</a>
+    <a href="#" class="btn-primary" data-booking>Prendre contact</a>
     <a href="#tarif" class="btn-ghost">Voir le tarif</a>
   </div>
   <div class="hero-stats">
@@ -346,7 +346,7 @@
         <li><span class="check">✓</span> Premier cours d'évaluation offert</li>
         <li><span class="check">✓</span> Aucun engagement de durée</li>
       </ul>
-      <a href="#contact" class="btn-primary" style="display:block;text-align:center">Réserver un cours</a>
+      <a href="#" class="btn-primary" style="display:block;text-align:center" data-booking>Réserver un cours</a>
     </div>
   </div>
 </section>
@@ -414,6 +414,96 @@
 <footer>
   <p>© 2026 Bruno Ricci — Cours particuliers Maths, Physique-Chimie &amp; Sciences de l'Ingénieur · Givors</p>
 </footer>
+
+<!-- MODAL RÉSERVATION -->
+<div id="booking-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Réserver un cours">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fermer">&#x2715;</button>
+
+    <div id="modal-form-wrap">
+      <h3 class="modal-title">Réserver un cours</h3>
+      <p class="modal-sub">Remplissez ce formulaire — je vous contacte <strong>dans les 6 prochaines heures</strong>.</p>
+
+      <form id="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-prenom">Prénom *</label>
+            <input type="text" id="f-prenom" name="prenom" required placeholder="Lucas" />
+          </div>
+          <div class="form-group">
+            <label for="f-nom">Nom *</label>
+            <input type="text" id="f-nom" name="nom" required placeholder="Martin" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-contact">Email ou téléphone *</label>
+          <input type="text" id="f-contact" name="contact" required placeholder="email@exemple.fr ou 06 xx xx xx xx" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-matiere">Matière *</label>
+            <select id="f-matiere" name="matiere" required>
+              <option value="">Choisir…</option>
+              <option>Mathématiques</option>
+              <option>Physique-Chimie</option>
+              <option>Sciences de l'Ingénieur</option>
+              <option>Plusieurs matières</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-niveau">Niveau *</label>
+            <select id="f-niveau" name="niveau" required>
+              <option value="">Choisir…</option>
+              <option>Primaire (CM1/CM2)</option>
+              <option>Collège (6e–3e)</option>
+              <option>Lycée (2de–Tle)</option>
+              <option>Supérieur / Adulte</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Jours disponibles</label>
+          <div class="slot-pills" id="days-pills">
+            <button type="button" class="slot-pill" data-value="Lundi">Lun</button>
+            <button type="button" class="slot-pill" data-value="Mardi">Mar</button>
+            <button type="button" class="slot-pill" data-value="Mercredi">Mer</button>
+            <button type="button" class="slot-pill" data-value="Jeudi">Jeu</button>
+            <button type="button" class="slot-pill" data-value="Vendredi">Ven</button>
+            <button type="button" class="slot-pill" data-value="Samedi">Sam</button>
+          </div>
+          <input type="hidden" name="jours" id="f-jours" />
+        </div>
+
+        <div class="form-group">
+          <label>Créneaux horaires</label>
+          <div class="slot-pills" id="hours-pills">
+            <button type="button" class="slot-pill" data-value="Matin (8h–12h)">🌅 Matin</button>
+            <button type="button" class="slot-pill" data-value="Après-midi (12h–18h)">☀️ Après-midi</button>
+            <button type="button" class="slot-pill" data-value="Soirée (18h–21h)">🌙 Soirée</button>
+          </div>
+          <input type="hidden" name="creneaux" id="f-creneaux" />
+        </div>
+
+        <div class="form-group">
+          <label for="f-message">Situation & objectifs</label>
+          <textarea id="f-message" name="message" rows="3" placeholder="Difficultés actuelles, objectifs, ce que vous attendez des cours…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit">Envoyer ma demande →</button>
+      </form>
+    </div>
+
+    <div id="form-success" class="form-success">
+      <div class="form-success-icon">✓</div>
+      <h4>Demande reçue !</h4>
+      <p>Je vous contacte dans les <strong>6 prochaines heures</strong>.<br>À très vite !</p>
+    </div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>
