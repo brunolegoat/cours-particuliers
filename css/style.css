@@ -571,10 +571,18 @@ section {
   opacity: 0.75;
 }
 .price-promo {
-  font-size: 0.8rem; color: var(--muted);
+  font-size: 0.8rem; color: rgba(220,38,38,0.75);
   font-style: italic; margin: 4px 0 28px;
   border-left: 2px solid rgba(220,38,38,0.3);
   padding-left: 10px; text-align: left;
+}
+.price-special { color: #DC2626; }
+.price-asterisk {
+  font-size: 0.5em;
+  font-weight: 700;
+  margin-left: 2px;
+  vertical-align: super;
+  line-height: 0;
 }
 .price-amount {
   font-size: 4.5rem;
