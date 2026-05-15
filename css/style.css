@@ -332,6 +332,8 @@ section {
 }
 
 /* ── QUI SUIS-JE ── */
+.about { padding-top: 48px; }
+
 .about-bio {
   font-size: 1.05rem;
   color: var(--graphite);
@@ -699,6 +701,7 @@ footer {
   .hero { padding: 68px 4% 64px; min-height: auto; }
   .hero-stats { gap: 28px; }
   section { padding: 64px 4%; }
+  .about { padding-top: 64px; }
   .pricing-card { padding: 36px 24px; }
   body {
     background-size: 28px 28px; /* grille légèrement plus large sur mobile */
