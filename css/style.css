@@ -783,14 +783,13 @@ footer {
 .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* Success state */
-.form-success { display: none; text-align: center; padding: 32px 0 16px; }
+.form-success { display: none; text-align: center; }
 .form-success.visible { display: block; }
-.form-success-icon {
-  font-size: 3rem; margin-bottom: 16px;
-  color: var(--accent);
-}
-.form-success h4 { font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
-.form-success p { color: var(--graphite); line-height: 1.7; }
+.form-success-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 6px; }
+.form-success-msg { font-size: 0.95rem; color: var(--graphite); margin-bottom: 16px; font-weight: 500; }
+
+/* Modal wide (Calendly) */
+.modal-box--wide { max-width: 720px; }
 
 @media (max-width: 540px) {
   .modal-box { padding: 36px 20px 28px; }
