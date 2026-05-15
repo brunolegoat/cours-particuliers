@@ -560,16 +560,18 @@ section {
   margin: 0 auto;
   text-align: center;
 }
-.pricing-card--special {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(37,99,235,0.12);
+.price-stack { display: flex; align-items: baseline; justify-content: center; gap: 12px; }
+.price-crossed-main {
+  color: #DC2626;
+  text-decoration: line-through;
+  font-size: 2.8rem;
+  opacity: 0.75;
 }
-.pricing-badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--accent); color: #fff;
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em;
-  padding: 5px 16px; border-radius: 20px;
-  white-space: nowrap;
+.price-promo {
+  font-size: 0.8rem; color: var(--muted);
+  font-style: italic; margin: 4px 0 28px;
+  border-left: 2px solid rgba(220,38,38,0.3);
+  padding-left: 10px; text-align: left;
 }
 .price-amount {
   font-size: 4.5rem;
