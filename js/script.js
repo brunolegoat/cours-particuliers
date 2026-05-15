@@ -157,6 +157,15 @@ bookingForm.addEventListener('submit', async e => {
       formWrap.style.display = 'none';
       document.querySelector('.modal-box').classList.add('modal-box--wide');
       formSuccess.classList.add('visible');
+
+      document.querySelectorAll('.duration-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.getElementById('duration-choice').style.display = 'none';
+          const container = document.getElementById('calendly-container');
+          container.classList.add('active');
+          Calendly.initInlineWidget({ url: card.dataset.url, parentElement: container });
+        });
+      });
     } else {
       btn.textContent = 'Erreur — réessayer';
       btn.disabled = false;

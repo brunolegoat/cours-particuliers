@@ -476,8 +476,20 @@
 
     <div id="form-success" class="form-success">
       <div class="form-success-icon">✓</div>
-      <p class="form-success-msg">Informations reçues ! Choisissez maintenant votre créneau :</p>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/brunoricci066/30min" style="min-width:280px;height:580px;"></div>
+      <p class="form-success-msg">Informations reçues ! Choisissez la durée de votre cours :</p>
+      <div class="duration-choice" id="duration-choice">
+        <button class="duration-card" data-url="https://calendly.com/brunoricci066/cours-particulier-1h">
+          <span class="duration-time">1h</span>
+          <span class="duration-label">Cours d'une heure</span>
+          <span class="duration-price">25€</span>
+        </button>
+        <button class="duration-card" data-url="https://calendly.com/brunoricci066/cours-particulier-2h">
+          <span class="duration-time">2h</span>
+          <span class="duration-label">Cours de deux heures</span>
+          <span class="duration-price">50€</span>
+        </button>
+      </div>
+      <div id="calendly-container"></div>
     </div>
   </div>
 </div>

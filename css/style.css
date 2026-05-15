@@ -786,10 +786,45 @@ footer {
 .form-success { display: none; text-align: center; }
 .form-success.visible { display: block; }
 .form-success-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: 6px; }
-.form-success-msg { font-size: 0.95rem; color: var(--graphite); margin-bottom: 16px; font-weight: 500; }
+.form-success-msg { font-size: 0.95rem; color: var(--graphite); margin-bottom: 20px; font-weight: 500; }
+
+/* Duration choice cards */
+.duration-choice {
+  display: flex; gap: 16px; justify-content: center;
+  margin-bottom: 24px;
+}
+.duration-card {
+  flex: 1; max-width: 200px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 24px 16px;
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(30,58,138,0.2);
+  border-radius: var(--radius-lg);
+  cursor: pointer; font-family: inherit;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.duration-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.15);
+  transform: translateY(-2px);
+}
+.duration-time {
+  font-size: 2.2rem; font-weight: 800; color: var(--ink-blue); line-height: 1;
+}
+.duration-label { font-size: 0.82rem; color: var(--graphite); }
+.duration-price { font-size: 1rem; font-weight: 700; color: var(--accent); margin-top: 4px; }
+
+/* Calendly container */
+#calendly-container { min-height: 0; }
+#calendly-container.active { min-height: 580px; }
 
 /* Modal wide (Calendly) */
 .modal-box--wide { max-width: 720px; }
+
+@media (max-width: 400px) {
+  .duration-choice { flex-direction: column; align-items: center; }
+}
 
 @media (max-width: 540px) {
   .modal-box { padding: 36px 20px 28px; }
