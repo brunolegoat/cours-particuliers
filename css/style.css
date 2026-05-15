@@ -390,10 +390,10 @@ section {
   padding: 3px 6px;
   vertical-align: middle;
 }
-.bh-mat { text-align: left; min-width: 130px; color: #8B6010; font-size: 0.68rem; }
-.bh-num { text-align: center; color: #8B6010; font-size: 0.68rem; white-space: nowrap; }
-.bh-moy { text-align: center; color: #8B6010; font-size: 0.68rem; }
-.bh-elv { text-align: center; color: #8B6010; font-size: 0.68rem; background: rgba(200,200,200,0.18); }
+.bh-mat { text-align: left; min-width: 130px; color: #222; font-size: 0.68rem; }
+.bh-num { text-align: center; color: #222; font-size: 0.68rem; white-space: nowrap; }
+.bh-moy { text-align: center; color: #222; font-size: 0.68rem; }
+.bh-elv { text-align: center; color: #222; font-size: 0.68rem; background: rgba(200,200,200,0.18); }
 .bd-mat { text-align: left; font-size: 0.72rem; line-height: 1.5; }
 .bd-num { text-align: center; font-size: 0.72rem; white-space: nowrap; }
 .bd-elv { text-align: center; font-weight: bold; font-size: 0.72rem; background: rgba(200,200,200,0.18); }
@@ -429,8 +429,15 @@ section {
 }
 
 @media (max-width: 700px) {
-  .bulletin-timeline { flex-direction: column; gap: 24px; }
-  .bulletin-arrow-wrap { width: 100%; padding-top: 0; transform: rotate(90deg); }
+  .bulletin-timeline { flex-direction: column; align-items: center; gap: 0; }
+  .bulletin-col { width: 100%; }
+  .bulletin-arrow-wrap {
+    width: 80px;
+    height: 80px;
+    padding-top: 0;
+    overflow: visible;
+  }
+  .bulletin-arrow { width: 80px; height: 80px; transform: rotate(90deg); }
 }
 
 /* ── MATIÈRES ── */
