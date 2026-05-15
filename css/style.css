@@ -383,7 +383,7 @@ section {
 /* Document shell */
 .bulletin-doc {
   background: #fff;
-  border: 1.5px solid rgba(37,99,235,0.35);
+  border: 1.5px solid #1E3A8A;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -408,7 +408,7 @@ section {
   z-index: 1;
 }
 .bulletin-doc--after {
-  border-color: rgba(37,99,235,0.35);
+  border-color: #1E3A8A;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 .bulletin-doc--after::before {
@@ -423,7 +423,7 @@ section {
 }
 .bulletin-table th,
 .bulletin-table td {
-  border: 1px solid rgba(37,99,235,0.28);
+  border: 1px solid rgba(30,58,138,0.4);
   padding: 3px 6px;
   vertical-align: middle;
 }
@@ -445,13 +445,13 @@ section {
 }
 
 /* Appreciation box */
-.bulletin-appr { border-top: 1px solid rgba(37,99,235,0.28); padding: 6px 8px; }
+.bulletin-appr { border-top: 1px solid rgba(30,58,138,0.4); padding: 6px 8px; }
 .bulletin-appr--after { border-left: none; }
 .bulletin-appr-hd {
   text-align: center;
   font-size: 0.68rem;
   font-weight: bold;
-  border-bottom: 1px solid rgba(37,99,235,0.28);
+  border-bottom: 1px solid rgba(30,58,138,0.4);
   padding-bottom: 4px;
   margin-bottom: 6px;
   color: #333;
