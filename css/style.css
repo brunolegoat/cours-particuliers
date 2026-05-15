@@ -250,6 +250,12 @@ section {
   max-width: 560px;
   margin: 0 auto 44px;
 }
+.hero-sub span {
+  background: var(--highlight);
+  border-radius: 3px;
+  padding: 0 4px;
+  color: var(--ink-blue);
+}
 .hero-actions {
   display: flex;
   gap: 14px;
