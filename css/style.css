@@ -72,16 +72,16 @@ body::after {
 /* ── NOTE 20/20 ── */
 .hero-grade {
   position: absolute;
-  top: 12px;
-  right: 2%;
+  top: 20px;
+  right: 20px;
   width: 200px;
-  z-index: 2;
+  z-index: 4;
   pointer-events: none;
   transform: rotate(-5deg);
   overflow: visible;
 }
 @media (max-width: 640px) {
-  .hero-grade { width: 150px; top: 8px; right: 1%; }
+  .hero-grade { width: 140px; top: 16px; right: 12px; }
 }
 
 @media (max-width: 768px) {
