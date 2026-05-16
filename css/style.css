@@ -276,7 +276,15 @@ section {
   text-decoration-color: #DC2626;
   text-decoration-thickness: 2px;
 }
-.stat-special { color: #DC2626; }
+.stat-special { color: #C53030; }
+.hero-promo-note {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: rgba(197,48,48,0.75);
+  font-style: italic;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.01em;
+}
 .stat-number {
   font-size: 2.2rem;
   font-weight: 800;
