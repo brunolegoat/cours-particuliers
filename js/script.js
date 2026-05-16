@@ -154,8 +154,6 @@ function showDurationChoice() {
   });
 }
 
-document.getElementById('skip-form').addEventListener('click', showDurationChoice);
-
 /* Form submission via fetch → Formspree */
 bookingForm.addEventListener('submit', async e => {
   e.preventDefault();
