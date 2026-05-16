@@ -350,14 +350,65 @@ section {
 .hero { padding-bottom: 44px; }
 .about { padding-top: 44px; }
 
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 52px;
+}
+
+.about-photo-wrap {
+  flex-shrink: 0;
+  position: relative;
+}
+.about-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) 0%,
+    rgba(37,99,235,0.15) 40%,
+    var(--accent) 100%
+  );
+  opacity: 0.35;
+  z-index: 0;
+}
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid rgba(255,255,255,0.9);
+  box-shadow: 0 8px 32px rgba(30,58,138,0.15);
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
 .about-bio {
   font-size: 1.05rem;
   color: var(--graphite);
-  max-width: 640px;
   line-height: 1.85;
-  margin-bottom: 52px;
   padding-left: 18px;
   border-left: 2px solid var(--border);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .about-intro {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+  .about-bio {
+    border-left: none;
+    padding-left: 0;
+    border-top: 2px solid var(--border);
+    padding-top: 20px;
+    text-align: left;
+  }
 }
 
 /* Timeline layout */
