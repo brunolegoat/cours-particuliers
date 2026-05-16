@@ -581,10 +581,12 @@ section {
 .price-stack { display: flex; align-items: baseline; justify-content: center; gap: 12px; }
 .price-crossed-main {
   text-decoration: line-through;
+  text-decoration-color: #DC2626;
+  text-decoration-thickness: 3px;
   font-size: 2.8rem;
-  opacity: 0.75;
+  opacity: 0.85;
 }
-.price-amount.price-crossed-main { color: #DC2626; }
+.price-amount.price-crossed-main { color: var(--accent); }
 .price-amount.price-special { color: #DC2626; }
 .price-promo {
   font-size: 0.8rem; color: rgba(220,38,38,0.75);
