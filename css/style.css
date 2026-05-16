@@ -168,18 +168,7 @@ section {
 }
 
 /* ── ANNOTATIONS ── */
-.annotation {
-  position: absolute;
-  left: -52px;
-  top: 4px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.6rem;
-  color: var(--muted);
-  opacity: 0.5;
-  white-space: nowrap;
-  pointer-events: none;
-  letter-spacing: 0.05em;
-}
+.annotation { display: none; }
 
 /* ── SCROLL REVEAL ── */
 [data-reveal] {
