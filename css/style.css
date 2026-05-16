@@ -293,20 +293,20 @@ section {
 }
 .stat-special { color: #C53030; }
 .hero-promo-note {
-  margin-top: 14px;
-  font-size: 0.78rem;
-  color: rgba(197,48,48,0.75);
+  margin-top: 16px;
+  font-size: 0.88rem;
+  color: rgba(197,48,48,0.78);
   font-style: italic;
   font-family: 'Courier New', monospace;
   letter-spacing: 0.01em;
 }
 .stat-number {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: -0.03em;
 }
-.stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+.stat-label { font-size: 0.95rem; color: var(--muted); margin-top: 6px; }
 
 /* ── BOUTONS ── */
 .btn-primary {
