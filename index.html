@@ -97,12 +97,28 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-grade" aria-hidden="true">
-    <span class="hero-grade-text">20/20</span>
-    <svg class="hero-grade-underline" viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 5 Q20 2 40 5 Q60 8 78 4" stroke="#C01B1B" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <svg class="hero-grade" aria-hidden="true" viewBox="0 0 210 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f-hand">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+    <g filter="url(#f-hand)" stroke="#C01B1B" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- 2 -->
+      <path d="M8,22 C10,10 26,8 28,18 C30,28 14,38 7,50 L30,51" stroke-width="3.5"/>
+      <!-- 0 -->
+      <path d="M44,14 C55,7 70,10 71,24 C72,38 63,53 50,54 C37,55 32,40 36,26 C38,17 44,14 44,14Z" stroke-width="3.5"/>
+      <!-- / -->
+      <path d="M80,62 L108,4" stroke-width="3.8"/>
+      <!-- 2 -->
+      <path d="M118,22 C120,10 136,8 138,18 C140,28 124,38 117,50 L140,51" stroke-width="3.5"/>
+      <!-- 0 -->
+      <path d="M154,14 C165,7 180,10 181,24 C182,38 173,53 160,54 C147,55 142,40 146,26 C148,17 154,14 154,14Z" stroke-width="3.5"/>
+      <!-- soulignement -->
+      <path d="M4,66 Q50,62 105,67 Q155,72 205,65" stroke-width="2.2" opacity="0.7"/>
+    </g>
+  </svg>
   <svg class="hero-sketch" aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
     <path d="M 100 500 Q 400 100 700 350 T 1200 200" fill="none" stroke="rgba(30,58,138,0.07)" stroke-width="1.5" stroke-linecap="round" />
     <path d="M 0 300 Q 300 450 600 200 T 1100 400" fill="none" stroke="rgba(30,58,138,0.07)" stroke-width="1.5" stroke-linecap="round" />
