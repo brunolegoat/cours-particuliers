@@ -154,6 +154,18 @@ function showDurationChoice() {
   });
 }
 
+/* Limite à 10 chiffres si le champ contact ressemble à un numéro */
+const contactInput = document.getElementById('f-contact');
+contactInput.addEventListener('input', () => {
+  const v = contactInput.value;
+  const looksLikePhone = /^[\d\s+().-]*$/.test(v);
+  if (!looksLikePhone) return;
+  const digits = v.replace(/\D/g, '');
+  if (digits.length > 10) {
+    contactInput.value = digits.slice(0, 10);
+  }
+});
+
 /* Form submission via fetch → Formspree */
 bookingForm.addEventListener('submit', async e => {
   e.preventDefault();
