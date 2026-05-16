@@ -15,8 +15,8 @@
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 <div class="margin-line" aria-hidden="true"></div>
 
-<!-- DÉCORATIONS CAHIER : taches d'encre réparties sur toute la page -->
-<svg id="notebook-deco" aria-hidden="true" viewBox="0 0 1440 5400" preserveAspectRatio="none">
+<!-- DÉCORATIONS CAHIER : taches d'encre -->
+<svg id="notebook-deco" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="none">
   <defs>
     <filter id="f-ink" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="3 3"/>
@@ -26,105 +26,56 @@
     </filter>
   </defs>
 
-  <!-- ══ ZONE 1 : 0-900 (Hero) ══ -->
+  <!-- ══ CÔTÉ GAUCHE ══ -->
+
+  <!-- Tache 1 : blob moyen, haut gauche -->
   <g filter="url(#f-ink)" opacity="0.18">
     <path transform="translate(36,148)" d="M0,0 C3,-14 24,-17 27,-6 C30,5 23,21 9,19 C-5,17 -3,14 0,0" fill="#1E3A8A"/>
     <ellipse transform="translate(60,138)" cx="0" cy="0" rx="5" ry="3.2" fill="#1E3A8A" opacity="0.55"/>
   </g>
+
+  <!-- Tache 2 : petite goutte, côté gauche milieu-haut -->
   <g filter="url(#f-ink-sm)" opacity="0.14">
     <path transform="translate(52,358)" d="M0,0 C1,-9 14,-11 16,-3 C18,5 12,14 4,12 C-4,10 -1,9 0,0" fill="#1E3A8A"/>
     <ellipse transform="translate(60,368)" cx="0" cy="0" rx="3" ry="1.8" fill="#1E3A8A" opacity="0.45"/>
   </g>
+
+  <!-- Tache 3 : blob irrégulier, milieu-bas gauche -->
   <g filter="url(#f-ink)" opacity="0.13">
     <path transform="translate(22,598)" d="M0,0 C4,-13 26,-16 29,-5 C32,6 25,22 11,20 C-3,18 -4,16 0,0" fill="#1E3A8A"/>
   </g>
+
+  <!-- Tache 4 : micro goutte bas gauche -->
+  <g filter="url(#f-ink-sm)" opacity="0.11">
+    <path transform="translate(48,808)" d="M0,0 C1,-7 12,-8 13,-2 C14,4 9,10 3,8 C-3,6 -1,7 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(55,816)" cx="0" cy="0" rx="2.5" ry="1.5" fill="#1E3A8A" opacity="0.4"/>
+  </g>
+
+  <!-- ══ CÔTÉ DROIT ══ -->
+
+  <!-- Tache 5 : blob moyen, haut droit -->
   <g filter="url(#f-ink)" opacity="0.16">
     <path transform="translate(1398,182)" d="M0,0 C-4,-14 -26,-16 -29,-5 C-32,6 -25,21 -11,19 C3,17 4,15 0,0" fill="#1E3A8A"/>
     <ellipse transform="translate(1370,172)" cx="0" cy="0" rx="4.5" ry="2.8" fill="#1E3A8A" opacity="0.5"/>
   </g>
+
+  <!-- Tache 6 : petite goutte avec satellite, droit milieu -->
   <g filter="url(#f-ink-sm)" opacity="0.14">
     <path transform="translate(1412,435)" d="M0,0 C-2,-10 -17,-12 -19,-4 C-21,4 -15,15 -6,13 C3,11 2,10 0,0" fill="#1E3A8A"/>
     <ellipse transform="translate(1392,444)" cx="0" cy="0" rx="4" ry="2.2" fill="#1E3A8A" opacity="0.4"/>
   </g>
+
+  <!-- Tache 7 : micro splash bas droit -->
   <g filter="url(#f-ink-sm)" opacity="0.12">
-    <path transform="translate(1420,792)" d="M0,0 C-1,-8 -13,-9 -14,-2 C-15,5 -9,11 -3,9 C3,7 1,8 0,0" fill="#1E3A8A"/>
+    <path transform="translate(1420,692)" d="M0,0 C-1,-8 -13,-9 -14,-2 C-15,5 -9,11 -3,9 C3,7 1,8 0,0" fill="#1E3A8A"/>
   </g>
 
-  <!-- ══ ZONE 2 : 900-1800 (Qui suis-je) ══ -->
-  <g filter="url(#f-ink-sm)" opacity="0.11">
-    <path transform="translate(44,1080)" d="M0,0 C1,-7 12,-8 13,-2 C14,4 9,10 3,8 C-3,6 -1,7 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.14">
-    <path transform="translate(1400,1240)" d="M0,0 C-3,-12 -22,-15 -25,-5 C-28,6 -22,20 -10,18 C2,16 3,14 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(1376,1252)" cx="0" cy="0" rx="3.5" ry="2" fill="#1E3A8A" opacity="0.4"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.15">
-    <path transform="translate(28,1480)" d="M0,0 C4,-13 25,-15 28,-4 C31,7 24,21 10,19 C-3,17 -4,15 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink-sm)" opacity="0.12">
-    <path transform="translate(1410,1700)" d="M0,0 C-2,-9 -16,-10 -17,-3 C-18,4 -13,12 -5,11 C2,10 1,9 0,0" fill="#1E3A8A"/>
-  </g>
-
-  <!-- ══ ZONE 3 : 1800-2700 (Matières) ══ -->
-  <g filter="url(#f-ink)" opacity="0.13">
-    <path transform="translate(38,1920)" d="M0,0 C3,-11 22,-14 25,-4 C28,5 22,19 9,17 C-3,15 -3,13 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(58,1908)" cx="0" cy="0" rx="3.8" ry="2.3" fill="#1E3A8A" opacity="0.45"/>
-  </g>
+  <!-- Tache 8 : toute petite, très bas droit -->
   <g filter="url(#f-ink-sm)" opacity="0.10">
-    <path transform="translate(1418,2080)" d="M0,0 C-1,-7 -11,-8 -12,-2 C-13,4 -8,10 -2,8 C2,7 1,7 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink-sm)" opacity="0.13">
-    <path transform="translate(48,2320)" d="M0,0 C1,-8 13,-10 15,-3 C17,5 11,13 3,11 C-4,9 -1,8 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.14">
-    <path transform="translate(1395,2550)" d="M0,0 C-4,-13 -24,-16 -27,-5 C-30,6 -23,21 -10,19 C3,17 4,15 0,0" fill="#1E3A8A"/>
+    <path transform="translate(1404,842)" d="M0,0 C-2,-11 -20,-13 -22,-4 C-24,5 -18,17 -7,15 C4,13 2,11 0,0" fill="#1E3A8A"/>
+    <ellipse transform="translate(1380,849)" cx="0" cy="0" rx="3" ry="1.8" fill="#1E3A8A" opacity="0.38"/>
   </g>
 
-  <!-- ══ ZONE 4 : 2700-3600 (Niveaux) ══ -->
-  <g filter="url(#f-ink-sm)" opacity="0.11">
-    <path transform="translate(56,2820)" d="M0,0 C1,-7 12,-8 13,-2 C14,4 9,10 3,8 C-3,6 -1,7 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(62,2828)" cx="0" cy="0" rx="2.5" ry="1.5" fill="#1E3A8A" opacity="0.4"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.13">
-    <path transform="translate(1404,3020)" d="M0,0 C-3,-12 -23,-15 -26,-4 C-29,7 -22,20 -9,18 C3,16 4,14 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink-sm)" opacity="0.10">
-    <path transform="translate(32,3250)" d="M0,0 C1,-6 10,-7 11,-2 C12,3 8,9 2,7 C-2,5 -1,6 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.14">
-    <path transform="translate(1390,3480)" d="M0,0 C-4,-14 -25,-16 -28,-5 C-31,6 -24,22 -10,20 C3,18 4,16 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(1368,3492)" cx="0" cy="0" rx="3.5" ry="2" fill="#1E3A8A" opacity="0.42"/>
-  </g>
-
-  <!-- ══ ZONE 5 : 3600-4500 (Méthode) ══ -->
-  <g filter="url(#f-ink-sm)" opacity="0.12">
-    <path transform="translate(40,3720)" d="M0,0 C1,-8 13,-9 14,-2 C15,5 10,12 3,10 C-3,8 -1,7 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.13">
-    <path transform="translate(1400,3920)" d="M0,0 C-3,-11 -22,-14 -25,-4 C-28,6 -21,19 -9,17 C3,15 3,13 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink-sm)" opacity="0.11">
-    <path transform="translate(50,4180)" d="M0,0 C1,-7 11,-8 12,-2 C13,4 8,11 2,9 C-3,7 -1,7 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(56,4188)" cx="0" cy="0" rx="2.2" ry="1.4" fill="#1E3A8A" opacity="0.38"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.14">
-    <path transform="translate(1408,4400)" d="M0,0 C-3,-12 -23,-15 -26,-5 C-29,6 -22,20 -10,18 C2,16 3,14 0,0" fill="#1E3A8A"/>
-  </g>
-
-  <!-- ══ ZONE 6 : 4500-5400 (Tarif + Contact) ══ -->
-  <g filter="url(#f-ink-sm)" opacity="0.12">
-    <path transform="translate(36,4620)" d="M0,0 C1,-8 14,-10 16,-3 C18,5 12,13 4,11 C-4,9 -1,8 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.13">
-    <path transform="translate(1395,4820)" d="M0,0 C-4,-13 -25,-15 -28,-4 C-31,7 -23,21 -10,19 C3,17 4,15 0,0" fill="#1E3A8A"/>
-    <ellipse transform="translate(1372,4832)" cx="0" cy="0" rx="3.2" ry="1.9" fill="#1E3A8A" opacity="0.4"/>
-  </g>
-  <g filter="url(#f-ink-sm)" opacity="0.10">
-    <path transform="translate(54,5060)" d="M0,0 C1,-7 11,-8 12,-2 C13,4 8,10 2,8 C-2,6 -1,7 0,0" fill="#1E3A8A"/>
-  </g>
-  <g filter="url(#f-ink)" opacity="0.14">
-    <path transform="translate(1402,5280)" d="M0,0 C-3,-12 -22,-15 -25,-5 C-28,6 -21,20 -9,18 C3,16 3,14 0,0" fill="#1E3A8A"/>
-  </g>
 </svg>
 
 <!-- NAV -->
