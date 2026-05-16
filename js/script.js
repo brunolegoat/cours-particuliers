@@ -1,3 +1,27 @@
+/* ── FEATURE 0 : Scroll progress bar ── */
+const scrollProgress = document.querySelector('.scroll-progress');
+let progressRafPending = false;
+
+function updateScrollProgress() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? Math.min(1, Math.max(0, scrollTop / docHeight)) : 0;
+  scrollProgress.style.transform = `scaleX(${progress})`;
+  scrollProgress.classList.toggle('visible', scrollTop > 40);
+}
+
+window.addEventListener('scroll', () => {
+  if (progressRafPending) return;
+  progressRafPending = true;
+  requestAnimationFrame(() => {
+    updateScrollProgress();
+    progressRafPending = false;
+  });
+}, { passive: true });
+
+window.addEventListener('resize', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
 /* ── FEATURE 1 : Canvas floating lines ── */
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
