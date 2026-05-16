@@ -705,11 +705,13 @@ section {
   flex-wrap: wrap;
   margin-bottom: 8px;
 }
-.contact-chip {
+a.contact-chip,
+.contact-chip:link,
+.contact-chip:visited {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--graphite);
@@ -719,14 +721,17 @@ section {
   padding: 9px 18px;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 .contact-chip:hover {
   border-color: rgba(30,58,138,0.25);
   color: var(--ink-blue);
   background: rgba(255,255,255,0.95);
 }
-.contact-chip--wa { color: #1A7A40; border-color: rgba(37,211,102,0.3); background: rgba(37,211,102,0.06); }
-.contact-chip--wa:hover { border-color: #25D366; background: rgba(37,211,102,0.12); color: #1A7A40; }
+a.contact-chip--wa,
+.contact-chip--wa:link,
+.contact-chip--wa:visited { color: #1A7A40; border-color: rgba(37,211,102,0.3); background: rgba(37,211,102,0.06); }
+a.contact-chip--wa:hover { border-color: #25D366; background: rgba(37,211,102,0.12); color: #1A7A40; }
 .contact-chip--wa svg { flex-shrink: 0; color: #25D366; }
 .contact-detail { margin-top: 28px; color: var(--muted); font-size: 0.88rem; }
 
