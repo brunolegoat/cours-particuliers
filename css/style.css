@@ -682,52 +682,65 @@ section {
 .contact .section-title { color: var(--ink-blue); }
 .contact .section-tag   { color: var(--muted); }
 .contact .section-desc  { color: var(--graphite); margin-left: auto; margin-right: auto; margin-bottom: 36px; }
-.contact-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+
+.contact-cta {
+  display: inline-block;
+  padding: 18px 44px;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
 }
-.btn-whatsapp {
+
+.contact-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.contact-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #25D366;
-  color: #fff;
-  padding: 15px 28px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 1rem;
+  color: var(--graphite);
   text-decoration: none;
-  transition: background .2s, transform .15s, box-shadow .2s;
-  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 4px 2px;
 }
-.btn-whatsapp:hover {
-  background: #1ebe5b;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
-}
-.contact-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: transparent;
+.contact-link:hover { color: var(--accent); }
+.contact-link--wa svg { color: #25D366; flex-shrink: 0; }
+.contact-link-icon {
   color: var(--ink-blue);
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background .2s, color .2s;
-  margin-top: 4px;
-  border: 1.5px solid var(--border);
+  font-size: 1rem;
+  line-height: 1;
 }
-.contact-email:hover {
-  background: rgba(30,58,138,0.06);
-  color: var(--accent);
+.contact-sep {
+  color: var(--muted);
+  opacity: 0.5;
+  font-size: 1.2rem;
+  line-height: 1;
 }
-.contact-detail { margin-top: 28px; color: var(--muted); font-size: 0.9rem; }
+.contact-detail { margin-top: 24px; color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 640px) {
+  .contact-cta {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+  .contact-secondary {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-sep { display: none; }
+  .contact-link { font-size: 0.9rem; }
+}
 
 /* ── FOOTER ── */
 footer {
