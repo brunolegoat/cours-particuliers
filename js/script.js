@@ -158,6 +158,14 @@ function showDurationChoice() {
 bookingForm.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = bookingForm.querySelector('.form-submit');
+
+  /* Bypass dev : 10 zéros dans le champ contact → saute Formspree */
+  const contactVal = (document.getElementById('f-contact').value || '').replace(/\D/g, '');
+  if (contactVal === '0000000000') {
+    showDurationChoice();
+    return;
+  }
+
   btn.textContent = 'Envoi en cours…';
   btn.disabled = true;
 
