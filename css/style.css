@@ -765,27 +765,43 @@ mark.hl {
 }
 .price-stack { display: flex; align-items: baseline; justify-content: center; gap: 12px; }
 .price-crossed-main {
-  text-decoration: line-through;
-  text-decoration-color: #DC2626;
-  text-decoration-thickness: 3px;
+  position: relative;
   font-size: 2.8rem;
-  opacity: 0.85;
+  opacity: 0.9;
+}
+.price-crossed-main::after {
+  content: '';
+  position: absolute;
+  left: -8%; right: -8%; top: 50%;
+  height: 3px;
+  background: #DC2626;
+  transform: rotate(-14deg);
+  transform-origin: center;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(220,38,38,0.35);
+  pointer-events: none;
 }
 .price-amount.price-crossed-main { color: var(--accent); }
-.price-amount.price-special { color: #DC2626; }
-.price-promo {
-  font-size: 0.8rem; color: rgba(220,38,38,0.75);
-  font-style: italic; margin: 4px 0 28px;
-  border-left: 2px solid rgba(220,38,38,0.3);
-  padding-left: 10px; text-align: left;
+.price-amount.price-special {
+  color: var(--accent);
+  transform: rotate(-6deg);
+  display: inline-block;
+  transform-origin: bottom left;
 }
-.price-special { color: #DC2626; }
+.price-promo {
+  font-size: 0.82rem; color: var(--graphite);
+  font-style: italic; margin: 14px auto 28px;
+  max-width: 400px; text-align: center;
+  line-height: 1.5;
+}
+.price-special { color: var(--accent); }
 .price-asterisk {
   font-size: 0.5em;
   font-weight: 700;
   margin-left: 2px;
   vertical-align: super;
   line-height: 0;
+  color: #DC2626;
 }
 .price-amount {
   font-size: 4.5rem;
